@@ -1,22 +1,24 @@
 doctype html
 html
-  head(lang='en')
-    meta(charset='UTF-8')
-    title Node Js Course
-    link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', type='text/css', href='stylesheets/home.css')
-    script(type='text/javascript', src='javascripts/jquery-3.1.1.min.js')
-    script(type='text/javascript', src='javascripts/login.js')
-  body
-    .jumbotron
-      .container
-        div#div1(style='width: 40% ; margin: auto ; display: inline-block ; margin-left: 5%')
-          h3  Login
-          form#login(action='' )
-            div
-              span username
-              input#username.form-control
-            div
-              span password
-              input#password.form-control
-            input.btn.btn-primary(type='submit', style='margin: 5px')
+    head(lang='en')
+        meta(charset='UTF-8')
+        title ورود
+        link(rel='stylesheet', href='stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', type='text/css', href='stylesheets/home.css')
+        script(type='text/javascript', src='javascripts/jquery-3.1.1.min.js')
+    body
+        .jumbotron
+            .container
+                div#div1(style='width: 40% ; margin: auto ; display: inline-block ; margin-left: 5%')
+                    h3  ورود
+                    form#login(action='/login' , method='POST')
+                        div
+                            span نام کاربری
+                            input.form-control(name='username')
+                        div
+                            span کلمه ی عبور
+                            input.form-control(name='passwd', type='password')
+                        input.btn.btn-primary(type='submit', style='margin: 5px' , value='ورود')
+                    #message
+                        if message
+                            h3.text-center.error-message #{message}
